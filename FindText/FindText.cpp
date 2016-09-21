@@ -1,5 +1,4 @@
 // findtext.cpp: определяет точку входа для консольного приложения.
-//
 
 #include <fstream>
 #include <string>
@@ -25,7 +24,7 @@ int main(int argc, char* argv[])
 	if (!file.good())
 	{
 		cout << "Error: reading file problem. Found some errors in the file! \n"
-			<< "PLease, check filename" << argv[1] << " \n";
+			<< "PLease, check file '" << argv[1] << "' \n";
 		return 1;
 	}
 
@@ -62,4 +61,6 @@ int main(int argc, char* argv[])
 	{
 		cout << "Text not found! \n";
 	}
+	
+	return 0;
 }
