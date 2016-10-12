@@ -1,3 +1,0 @@
-﻿  flipbyte.cpp
-c:\program boss\oop\flipbyte\flipbyte.cpp(60): warning C4244: инициализация: преобразование "int" в "unsigned char", возможна потеря данных
-  flipbyte.vcxproj -> C:\Program boss\OOP\flipbyte\Debug\flipbyte.exe
