@@ -17,5 +17,6 @@ int main()
 			cout << "Unknown command\n";
 		}
 	}
+	controller.PrintAllBodies();
 	return 0;
 }

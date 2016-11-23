@@ -16,11 +16,11 @@ class CController : boost::noncopyable
 public:
 	CController(vector<shared_ptr<CBody>> &bodies, istream &input, ostream &output);
 	bool HandleCommand();
+	bool PrintAllBodies();
 private:
 	bool ShowCommands();
 	bool FindBodyWithMaxMass();
 	bool FindBodyWithSmallestWeight();
-	bool PrintAllBodies();
 	bool CreateSphere(istream &rgs);
 	bool CreateParallelepiped(istream &args);
 	bool CreateCone(istream &args);
