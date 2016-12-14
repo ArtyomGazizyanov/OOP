@@ -1,0 +1,132 @@
+﻿#pragma once
+
+#include <iostream>
+
+/*
+Класс, моделирующий рациональное число
+*/
+class CRational final
+{
+public:
+
+	void Initialization(int numerator, int denominator);
+	CRational(int numerator = 0, int denominator = 1);
+
+	// Возвращает числитель
+	int GetNumerator() const;
+
+	// Возвращает знаменатель
+	int GetDenominator() const;
+
+	//устанавливает делимое
+	void CRational::SetNumerator(int numerator);
+
+	//устанавливает делитель
+	void CRational::SetDenominator(int denominator);
+
+	//////////////////////////////////////////////////////////////////////////
+	// TODO: 1. Реализовать метод ToDouble()  
+	//////////////////////////////////////////////////////////////////////////
+
+	double ToDouble() const;
+
+	//////////////////////////////////////////////////////////////////////////
+	// TODO: 2. Реализовать унарный + и унарный - 
+	//////////////////////////////////////////////////////////////////////////
+
+	const CRational operator+() const;
+	const CRational operator-() const;
+
+	//////////////////////////////////////////////////////////////////////////
+	// TODO: 3. Реализовать бинарный + 
+	//////////////////////////////////////////////////////////////////////////
+
+	friend const CRational operator+(const CRational & lRationalNumber, const CRational & rRationalNumber); 
+
+	//////////////////////////////////////////////////////////////////////////
+	// TODO: 4. Реализовать бинарный - 
+	//////////////////////////////////////////////////////////////////////////
+
+	friend const CRational operator-(const CRational & lRationalNumber, const CRational & rRationalNumber); 
+
+	//////////////////////////////////////////////////////////////////////////
+	// TODO: 5. Реализовать оператор +=  
+	//////////////////////////////////////////////////////////////////////////
+
+	const CRational & operator+=(const CRational & summand); 
+
+	//////////////////////////////////////////////////////////////////////////
+	// TODO: 6. Реализовать оператор -= 
+	//////////////////////////////////////////////////////////////////////////
+
+	const CRational & operator-=(const CRational & subtrahend); 
+
+	//////////////////////////////////////////////////////////////////////////
+	// TODO: 7. Реализовать оператор * 
+	//////////////////////////////////////////////////////////////////////////
+
+	friend const CRational operator*(const CRational & lRationalNumber, const CRational & rRationalNumber);
+
+	//////////////////////////////////////////////////////////////////////////
+	// TODO: 8. Реализовать оператор / 
+	//////////////////////////////////////////////////////////////////////////
+
+	friend const CRational operator/(const CRational & dividend, const CRational & divider); 
+
+	//////////////////////////////////////////////////////////////////////////
+	// TODO: 9. Реализовать оператор *= 
+	//////////////////////////////////////////////////////////////////////////
+
+	const CRational & operator*=(const CRational & multiplier);
+
+	//////////////////////////////////////////////////////////////////////////
+	// TODO: 10. Реализовать оператор /= 
+	//////////////////////////////////////////////////////////////////////////
+
+	const CRational & operator/=(const CRational & divider);
+
+	//////////////////////////////////////////////////////////////////////////
+	// TODO: 11. Реализовать операторы == и != 
+	//////////////////////////////////////////////////////////////////////////
+	 
+	friend const bool operator != (const CRational & lRationalNumber, const CRational & rRationalNumber);
+	friend const bool operator == (const CRational & lRationalNumber, const CRational & rRationalNumber);
+
+	//////////////////////////////////////////////////////////////////////////
+	// TODO: 12. Реализовать операторы <, >, <=, >= 
+	//////////////////////////////////////////////////////////////////////////
+
+	friend const bool operator<(const CRational & lRationalNumber, const CRational & rRationalNumber);
+	friend const bool operator>(const CRational & lRationalNumber, const CRational & rRationalNumber);
+	friend const bool operator<=(const CRational & lRationalNumber, const CRational & rRationalNumber);
+	friend const bool operator>=(const CRational & lRationalNumber, const CRational & rRationalNumber);
+
+	//////////////////////////////////////////////////////////////////////////
+	// TODO: 13. Реализовать оператор вывода рационального числа в выходной поток 
+	//	std::ostream в формате <числитель>/<знаменатель>, 
+	//	например: 7/15
+	//////////////////////////////////////////////////////////////////////////
+
+	friend std::ostream & operator<<(std::ostream & output, const CRational & value); 
+
+	//////////////////////////////////////////////////////////////////////////
+	// TODO: 14. Реализовать оператор ввода рационального числа из входного потока 
+	//	std::istream в формате <числитель>/<знаменатель>, 
+	//	например: 7/15
+	////////////////////////////////////////////////////////////////////////// 
+	 
+
+private:
+	int m_numerator;
+	int m_denominator;
+
+	 
+	// Нормализует рациональное число
+	void Normalize();
+};
+
+// Вычисляет наибольший общий делитель (greatest common denominator) чисел a и b
+unsigned GCD(unsigned a, unsigned b);
+
+// Вычисляет наименьшее общее кратное (least common multiple) чисел a и b
+unsigned LCM(unsigned a, unsigned b);
